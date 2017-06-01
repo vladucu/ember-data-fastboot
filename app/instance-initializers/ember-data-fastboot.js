@@ -27,5 +27,9 @@ export function initialize(applicationInstance) {
 
 export default {
   name: 'ember-data-fastboot',
-  initialize
+  initialize() {
+    if (typeof FastBoot === 'undefined') {
+      initialize(...arguments);
+    }
+  }
 };
